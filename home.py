@@ -1,0 +1,20 @@
+import time
+from selenium import webdriver
+# Home: добавление комментария
+driver = webdriver.Chrome(executable_path='C:/chromedriver.exe')
+driver.implicitly_wait(5)
+driver.maximize_window()
+driver.get("http://practice.automationtesting.in/")
+driver.execute_script("window.scrollBy(0, 600);")
+button=driver.find_element_by_css_selector(".products h3")
+button.click()
+driver.find_element_by_css_selector("[href='#tab-reviews']").click()
+driver.find_element_by_css_selector(".star-5").click()
+review=driver.find_element_by_id("comment")
+review.send_keys("Nice book!")
+name=driver.find_element_by_id("author")
+name.send_keys("Ekaterina")
+email=driver.find_element_by_id("email")
+email.send_keys("111@mail.ru")
+driver.find_element_by_id("submit").click()
+driver.quit()
