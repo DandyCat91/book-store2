@@ -1,6 +1,5 @@
 import time
 from selenium import webdriver
-# Home: добавление комментария
 driver = webdriver.Chrome(executable_path='C:/chromedriver.exe')
 driver.implicitly_wait(5)
 driver.maximize_window()
